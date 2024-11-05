@@ -1,7 +1,7 @@
 // import { json } from "@remix-run/node";
-import { useLoaderData } from "@remix-run/react";
+// import { useLoaderData } from "@remix-run/react";
 
-import { client } from "../utils/db.server";
+// import { client } from "../utils/db.server";
 
 export default function Bob() {
   //   const movies = useLoaderData();
