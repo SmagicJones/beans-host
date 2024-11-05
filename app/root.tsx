@@ -13,6 +13,8 @@ export const links: LinksFunction = () => [
   { rel: "stylesheet", href: stylesheet },
 ];
 
+import Header from "./components/header";
+
 export default function App() {
   return (
     <html lang="en">
@@ -23,6 +25,7 @@ export default function App() {
         <Links />
       </head>
       <body>
+        <Header />
         <Outlet />
         <ScrollRestoration />
         <Scripts />
