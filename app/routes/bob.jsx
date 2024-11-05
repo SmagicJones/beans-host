@@ -13,5 +13,5 @@ export async function loader() {
   let db = await client.db("sample_mflix");
   let collection = await db.collection("movies");
   let movies = await collection.find({}).limit(10).toArray();
-  return movies;
+  return JSON.stringify(movies);
 }
