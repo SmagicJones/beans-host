@@ -6,12 +6,9 @@ import {
   ScrollRestoration,
 } from "@remix-run/react";
 
-import type { LinksFunction } from "@remix-run/node";
 import stylesheet from "~/tailwind.css?url";
 
-export const links: LinksFunction = () => [
-  { rel: "stylesheet", href: stylesheet },
-];
+export const links = () => [{ rel: "stylesheet", href: stylesheet }];
 
 import Header from "./components/header";
 
@@ -31,5 +28,13 @@ export default function App() {
         <Scripts />
       </body>
     </html>
+  );
+}
+
+export function ErrorBoundary() {
+  return (
+    <div>
+      <h3>There is some kind of error</h3>
+    </div>
   );
 }
