@@ -8,7 +8,7 @@ import {
 
 import { isRouteErrorResponse, useRouteError } from "@remix-run/react";
 
-import stylesheet from "~/tailwind.css?url";
+import stylesheet from "tailwindcss";
 
 export const links = () => [{ rel: "stylesheet", href: stylesheet }];
 
