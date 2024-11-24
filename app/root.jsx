@@ -6,12 +6,11 @@ import {
   ScrollRestoration,
 } from "@remix-run/react";
 
-import type { LinksFunction } from "@remix-run/node";
-import stylesheet from "~/tailwind.css?url";
+import { isRouteErrorResponse, useRouteError } from "@remix-run/react";
 
-export const links: LinksFunction = () => [
-  { rel: "stylesheet", href: stylesheet },
-];
+import stylesheet from "tailwindcss";
+
+export const links = () => [{ rel: "stylesheet", href: stylesheet }];
 
 import Header from "./components/header";
 
