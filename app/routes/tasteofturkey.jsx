@@ -11,14 +11,14 @@ export default function Tot() {
     <main>
       <section>
         <div className="grid md:grid-cols-1">
-          <div className="bg-lime-400 rounded m-2 text-center p-4">
+          <div className="bg-purple-400 rounded m-2 text-center p-4">
             <h1 className="text-4xl">Taste of Turkey</h1>
           </div>
         </div>
       </section>
       <section className="m-2">
         <div className="grid md:grid-cols-2 gap-4">
-          <div className="bg-lime-300 rounded p-4">
+          <div className="bg-purple-300 rounded p-4">
             <p className="p-4">
               Welcome friends to the first installment of Boblogs, wherein I Bob
               Holland chronicle my adventures through the culinary landscape of
@@ -69,7 +69,7 @@ export default function Tot() {
           <div className="rounded p-4">
             <img src={choice} className="mx-auto rounded" alt="" />
           </div>
-          <div className="bg-lime-300 rounded p-4">
+          <div className="bg-purple-300 rounded p-4">
             <p className="p-4">
               Taste of Turkey is quaintly situated next to the level crossing
               adding a frisson of danger to the surroundings. The interior is
@@ -94,7 +94,7 @@ export default function Tot() {
 
       <section className="m-2">
         <div className="grid md:grid-cols-2 gap-4">
-          <div className="bg-lime-300 rounded p-4">
+          <div className="bg-purple-300 rounded p-4">
             <h3 className="text-4xl text-center">Starter</h3>
             <p className="p-4">
               Kalamari - light and unrubbery not fowl at all 🦃
@@ -115,7 +115,7 @@ export default function Tot() {
           <div className="rounded p-4">
             <img src={main} className="mx-auto rounded" alt="" />
           </div>
-          <div className="bg-lime-300 rounded p-4">
+          <div className="bg-purple-300 rounded p-4">
             <h3 className="text-4xl text-center">Main course</h3>
             <p className="p-4">
               Mixed grill special for 2 and chips - lamb and chicken heavy, I
@@ -127,7 +127,7 @@ export default function Tot() {
 
       <section className="m-2">
         <div className="grid md:grid-cols-1 text-center">
-          <div className="rounded p-4 bg-lime-300">
+          <div className="rounded p-4 bg-purple-300">
             <p className="p-4">
               We finished with coffees (zero turkey taste) and to my shame I
               denied my amazing companion the chocolate and pistachio cake she

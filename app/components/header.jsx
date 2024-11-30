@@ -1,11 +1,18 @@
+import { NavLink } from "@remix-run/react";
+
 export default function Header() {
   return (
-    <div className="grid grid-cols-1 m-2 gap-4">
-      <div className="rounded bg-slate-500 p-4">
-        <h1 className="text-4xl text-center">
-          Testing Bob with Tailwind hosted Remix app
+    <header className="grid grid-cols-1">
+      <div className="bg-purple-300 p-4">
+        <h1 className="lg:text-8xl md:text-4xl sm:text-2xl text-center">
+          Welcome to Boblogs
         </h1>
+        <nav className="flex justify-between p-2 items-center">
+          <NavLink to="/tasteofturkey">Taste of Turkey</NavLink>
+          <NavLink to="/bridgefest">Bridgefest</NavLink>
+          <NavLink to="/music">Music</NavLink>
+        </nav>
       </div>
-    </div>
+    </header>
   );
 }
