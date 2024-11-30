@@ -8,7 +8,6 @@ export default function Header() {
           Welcome to Boblogs
         </h1>
         <nav className="flex justify-between p-2 items-center">
-          <NavLink to="/">Home</NavLink>
           <NavLink to="/tasteofturkey">Taste of Turkey</NavLink>
           <NavLink to="/bridgefest">Bridgefest</NavLink>
           <NavLink to="/music">Music</NavLink>
