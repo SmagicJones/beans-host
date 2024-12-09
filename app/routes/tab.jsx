@@ -67,13 +67,29 @@ export default function Tab() {
             </div>
           </>
         );
+      case "cool":
+        return (
+          <>
+            <div className="p-4">
+              <h3 className="text-4xl pb-2">Cool Stuff</h3>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div className="bg-purple-100 p-4 rounded">
+                  <h3>Something Wicked</h3>
+                </div>
+                <div className="bg-purple-100 p-4 rounded">
+                  <h3>Something Brilliant</h3>
+                </div>
+              </div>
+            </div>
+          </>
+        );
     }
   }
 
   return (
-    <main>
+    <main className="m-4">
       {/* tabs */}
-      <section>
+      <section className="border-4  border-purple-100">
         <div className="grid grid-cols-1 m-2">
           <ul className="flex justify-evenly">
             <li
@@ -94,11 +110,17 @@ export default function Tab() {
             >
               Tech Specs
             </li>
+            <li
+              onClick={() => setSelection("cool")}
+              className="p-2 bg-purple-200 hover:bg-purple-300 hover:text-white rounded"
+            >
+              Cool Stuff
+            </li>
           </ul>
         </div>
       </section>
       {/* content */}
-      <section>
+      <section className="border-purple-100 border-2">
         <div className="grid p-4 grid-cols-1">
           <div className="p-4">{renderSelection()}</div>
         </div>
