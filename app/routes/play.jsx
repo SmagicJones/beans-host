@@ -1,5 +1,7 @@
 import { NewTab } from "../components/NewTab";
 
+import { Button } from "../components/ui/button";
+
 import {
   Carousel,
   CarouselContent,
@@ -7,6 +9,12 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "../components/ui/carousel";
+
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from "../components/ui/hover-card";
 
 export default function Play() {
   return (
@@ -60,6 +68,14 @@ export default function Play() {
           </Carousel>
         </main>
       </section>
+      <div className="flex justify-center">
+        <HoverCard>
+          <HoverCardTrigger>
+            <Button>Hover</Button>
+          </HoverCardTrigger>
+          <HoverCardContent>Well done this now shows!</HoverCardContent>
+        </HoverCard>
+      </div>
     </main>
   );
 }
