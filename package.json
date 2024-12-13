@@ -13,12 +13,19 @@
   "dependencies": {
     "@netlify/functions": "^2.6.0",
     "@netlify/remix-adapter": "^2.3.1",
+    "@radix-ui/react-slot": "^1.1.1",
     "@remix-run/node": "^2.13.1",
     "@remix-run/react": "^2.13.1",
     "@remix-run/serve": "^2.13.1",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
     "dotenv": "^16.4.5",
+    "embla-carousel-react": "^8.5.1",
     "isbot": "^4.1.0",
-    "mongodb": "^6.10.0"
+    "lucide-react": "^0.468.0",
+    "mongodb": "^6.10.0",
+    "tailwind-merge": "^2.5.5",
+    "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
     "@remix-run/dev": "^2.13.1",

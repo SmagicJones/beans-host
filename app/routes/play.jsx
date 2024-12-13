@@ -1,5 +1,12 @@
 import { NewTab } from "../components/NewTab";
-import { Carousel } from "../components/Carousel";
+
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "../components/ui/carousel";
 
 export default function Play() {
   return (
@@ -34,7 +41,24 @@ export default function Play() {
           <div className="bg-slate-300">Hi</div>
         </div>
         <NewTab />
-        {/* <Carousel /> */}
+      </section>
+
+      <section style={{ padding: "50px" }}>
+        <main className="bg-slate-500 p-4">
+          <Carousel
+            opts={{
+              align: "center",
+            }}
+          >
+            <CarouselContent>
+              <CarouselItem>Bobby</CarouselItem>
+              <CarouselItem>Is</CarouselItem>
+              <CarouselItem>Super cool</CarouselItem>
+            </CarouselContent>
+            <CarouselPrevious />
+            <CarouselNext />
+          </Carousel>
+        </main>
       </section>
     </main>
   );
