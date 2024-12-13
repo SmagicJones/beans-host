@@ -16,6 +16,13 @@ import {
   HoverCardTrigger,
 } from "../components/ui/hover-card";
 
+import {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from "../components/ui/tabs";
+
 export default function Play() {
   return (
     <main>
@@ -75,6 +82,20 @@ export default function Play() {
           </HoverCardTrigger>
           <HoverCardContent>Well done this now shows!</HoverCardContent>
         </HoverCard>
+      </div>
+      <div>
+        <Tabs defaultValue="account" className="w-12">
+          <TabsList>
+            <TabsTrigger value="beans">beans</TabsTrigger>
+            <TabsTrigger value="something">something</TabsTrigger>
+          </TabsList>
+          <TabsContent value="beans">
+            A whole load of information about Beans
+          </TabsContent>
+          <TabsContent value="something">
+            Information about other things here
+          </TabsContent>
+        </Tabs>
       </div>
     </main>
   );
