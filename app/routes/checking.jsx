@@ -24,7 +24,7 @@ import { clients } from "../data/clients.js";
 
 export default function Checking() {
   return (
-    <main className="h-screen bg-slate-300">
+    <main className="h-screen bg-slate-300 w-full">
       <header className="grid grid-cols-1 gap-4 p-4 bg-slate-500">
         <div className="p-4">
           <h1 className="lg:text-8xl md:text-4xl sm:text-2xl text-center p-4 font-mono">
@@ -40,7 +40,7 @@ export default function Checking() {
 
       <article className="p-4 bg-slate-200 grid grid-cols-1 ">
         <div className="flex justify-center m-4 p-4">
-          <Carousel className="lg:w-2/4 md:w-full">
+          <Carousel className="p-4 m-4">
             <CarouselContent>
               {clients.map((client) => {
                 return (
