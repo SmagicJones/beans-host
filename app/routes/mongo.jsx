@@ -1,5 +1,6 @@
 import { useLoaderData } from "@remix-run/react";
 import { client } from "../utils/db.server";
+import { json } from "@remix-run/node";
 
 export default function Mongo() {
   const movie = useLoaderData();
@@ -17,5 +18,5 @@ export async function loader() {
   let db = await client.db("sample_mflix");
   let collection = await db.collection("movies");
   let movie = await collection.findOne();
-  return movie;
+  return json(movie);
 }
