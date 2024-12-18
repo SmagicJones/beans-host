@@ -38,9 +38,9 @@ export default function Checking() {
         </div>
       </header>
 
-      <article className="p-4 bg-slate-200 grid grid-cols-1 ">
+      <article className="p-4 bg-slate-200 grid md:grid-cols-2 gap-4">
         <div className="flex justify-center m-4 p-4">
-          <Carousel className="p-4 m-4">
+          <Carousel className="p-4 m-4 w-[70vw]">
             <CarouselContent>
               {clients.map((client) => {
                 return (
