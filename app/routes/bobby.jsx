@@ -20,6 +20,27 @@ import {
   CarouselPrevious,
 } from "../components/ui/carousel";
 
+import { LoginForm } from "../components/login-form";
+
+import { AppSidebar } from "../components/app-sidebar";
+
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "../components/ui/breadcrumb";
+
+import { Separator } from "../components/ui/separator";
+
+import {
+  SidebarInset,
+  SidebarProvider,
+  SidebarTrigger,
+} from "../components/ui/sidebar";
+
 import { clients } from "../data/clients.js";
 import { useState } from "react";
 
@@ -28,32 +49,7 @@ export default function Bobby() {
 
   return (
     <main>
-      <section>
-        <div className="grid grid-cols-1 p-4 bg-green-200">
-          <div className="flex justify-center items-center text-center">
-            <div>
-              <h1 className="lg:text-8xl md:text-4xl sm:text-2xl">
-                Bob's World
-              </h1>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-green-200">
-        <div className="text-center">
-          <h2 className="text-2xl">Here are some websites I have worked on</h2>
-        </div>
-        <div className="grid md:grid-cols-2 p-4 gap-4">
-          <div className="bg-white rounded">
-            <h3>Hello</h3>
-          </div>
-          <div className="bg-white  rounded">
-            <h3>Hello</h3>
-          </div>
-        </div>
-      </section>
-      <article className="p-4 bg-slate-200 grid md:grid-cols-2 gap-4">
+      <article className="p-4 bg-slate-200 grid md:grid-cols-1 gap-4">
         <div className="flex justify-center m-4 p-4">
           <Carousel className="p-4 m-4 w-[70vw]">
             <CarouselContent>
@@ -82,11 +78,7 @@ export default function Bobby() {
                         <Link to={client.link} className="pr-2">
                           <Button>Lets Go!</Button>
                         </Link>
-                        <Button
-                          onClick={() => {
-                            setSelection(client.title);
-                          }}
-                        >
+                        <Button onClick={() => setSelection(client.title)}>
                           More Info
                         </Button>
                       </CardFooter>
@@ -100,10 +92,37 @@ export default function Bobby() {
           </Carousel>
         </div>
         <section>
-          <div className="grid md:grid-cols-4 gap-4 p-4">
+          <div className="grid grid-cols-1 gap-4 p-4">
             <div className="bg-slate 400 p-4 rounded">
-              <h3 className="text-2xl text-center">Placeholder</h3>
-              <p>You have selected</p>
+              <h3 className="text-4xl text-center p-2">{selection}</h3>
+
+              {selection === "TunaLand" ? (
+                <div className="bg-purple-300 text-white p-4 rounded">
+                  <p>Welcome to Tuna Land, its a place for tuna to land</p>
+                  <p>
+                    A Place for everyone who really likes Tuna and everything to
+                    do with it.{" "}
+                  </p>
+                </div>
+              ) : selection === "BobLand" ? (
+                <div className="bg-purple-300 text-white p-4 rounded">
+                  <p>Welcome to Bob Land, its a place for tuna to land</p>
+                  <p>
+                    A Place for everyone who really likes Tuna and everything to
+                    do with it.{" "}
+                  </p>
+                </div>
+              ) : selection === "BurgerLand" ? (
+                <div className="bg-purple-300 text-white p-4 rounded">
+                  <p>Welcome to Burger Land, its a place for tuna to land</p>
+                  <p>
+                    A Place for everyone who really likes Tuna and everything to
+                    do with it.{" "}
+                  </p>
+                </div>
+              ) : (
+                <></>
+              )}
             </div>
           </div>
         </section>
@@ -116,6 +135,47 @@ export default function Bobby() {
           </div>
         </div>
       </section>
+
+      <section>
+        <div className="flex min-h-svh flex-col items-center justify-center bg-muted p-6 md:p-10">
+          <div className="w-full max-w-sm md:max-w-3xl">
+            <LoginForm />
+          </div>
+        </div>
+      </section>
+
+      <SidebarProvider>
+        <AppSidebar />
+        <SidebarInset>
+          <header className="flex h-16 shrink-0 items-center gap-2 border-b">
+            <div className="flex items-center gap-2 px-3">
+              <SidebarTrigger />
+              <Separator orientation="vertical" className="mr-2 h-4" />
+              <Breadcrumb>
+                <BreadcrumbList>
+                  <BreadcrumbItem className="hidden md:block">
+                    <BreadcrumbLink href="#">
+                      Building Your Application
+                    </BreadcrumbLink>
+                  </BreadcrumbItem>
+                  <BreadcrumbSeparator className="hidden md:block" />
+                  <BreadcrumbItem>
+                    <BreadcrumbPage>Data Fetching</BreadcrumbPage>
+                  </BreadcrumbItem>
+                </BreadcrumbList>
+              </Breadcrumb>
+            </div>
+          </header>
+          <div className="flex flex-1 flex-col gap-4 p-4">
+            <div className="grid auto-rows-min gap-4 md:grid-cols-3">
+              <div className="aspect-video rounded-xl bg-muted/50" />
+              <div className="aspect-video rounded-xl bg-muted/50" />
+              <div className="aspect-video rounded-xl bg-muted/50" />
+            </div>
+            <div className="min-h-[100vh] flex-1 rounded-xl bg-muted/50 md:min-h-min" />
+          </div>
+        </SidebarInset>
+      </SidebarProvider>
     </main>
   );
 }
