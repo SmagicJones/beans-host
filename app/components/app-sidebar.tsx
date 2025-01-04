@@ -21,7 +21,7 @@ const data = {
   navMain: [
     {
       title: "Blogs",
-      url: "#",
+      url: "/",
       items: [
         {
           title: "Taste of Turkey",
@@ -164,15 +164,13 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         <SidebarMenu>
           <SidebarMenuItem>
             <SidebarMenuButton size="lg" asChild>
-              <Link to="/">
-                <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">
+              {/* <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">
                   <GalleryVerticalEnd className="size-4" />
-                </div>
-                <div className="flex flex-col gap-0.5 leading-none">
-                  <span className="font-semibold">Boblogs</span>
-                  <span className="">v2.0</span>
-                </div>
-              </Link>
+                </div> */}
+              {/* <div className="flex flex-col gap-0.5 leading-none">
+                <span className="font-semibold">Boblogs</span>
+                <span className="">v2.0</span>
+              </div> */}
             </SidebarMenuButton>
           </SidebarMenuItem>
         </SidebarMenu>

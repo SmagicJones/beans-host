@@ -61,6 +61,7 @@ export default function App() {
           <div className="flex items-center gap-2 px-4">
             <SidebarTrigger className="-ml-1" />
             <Separator orientation="vertical" className="mr-2 h-4" />
+            <h1 className="lg:text-4xl md:text-2xl font-mono">Boblogs</h1>
             {/* <Breadcrumb>
               <BreadcrumbList>
                 <BreadcrumbItem className="hidden md:block">
@@ -81,7 +82,7 @@ export default function App() {
           <div className="aspect-video rounded-xl bg-muted/50" />
         </div> */}
           <div className="min-h-[100vh] flex-1 rounded-xl bg-muted/50 md:min-h-min">
-            <Outlet />;
+            <Outlet />
           </div>
         </div>
       </SidebarInset>
