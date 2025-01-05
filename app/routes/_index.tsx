@@ -12,8 +12,8 @@ import {
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "New Remix App" },
-    { name: "description", content: "Welcome to Remix!" },
+    { title: "Boblogs" },
+    { name: "description", content: "A place where bob blogs" },
   ];
 };
 
