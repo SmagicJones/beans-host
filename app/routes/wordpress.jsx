@@ -1,4 +1,7 @@
 import { useLoaderData } from "@remix-run/react";
+
+import { Button } from "../components/ui/button";
+
 export default function Wordpress() {
   const books = useLoaderData();
   return (
@@ -20,7 +23,9 @@ export default function Wordpress() {
               <div
                 dangerouslySetInnerHTML={{ __html: book.excerpt.rendered }}
               />
-              <a href={book.link}>Go</a>
+              <Button>
+                <a href={book.link}>Go</a>
+              </Button>
             </li>
           );
         })}
