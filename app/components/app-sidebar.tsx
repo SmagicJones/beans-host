@@ -24,6 +24,7 @@ const data = {
         {
           title: "Taste of Turkey",
           url: "/tasteofturkey",
+          isActive: true,
         },
         {
           title: "Bridgefest",
