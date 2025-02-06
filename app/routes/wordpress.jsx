@@ -1,17 +1,6 @@
 import { useLoaderData } from "@remix-run/react";
-import { json } from "@remix-run/react";
-import { useState } from "react";
 export default function Wordpress() {
   const books = useLoaderData();
-
-  //   console.log(Object.keys(books));
-
-  //   books.forEach((book) => {
-  //     console.log(book);
-  //   });
-
-  console.log(books);
-
   return (
     <main>
       <section>
@@ -24,22 +13,18 @@ export default function Wordpress() {
 
       <ul className="grid md:grid-cols-2 gap-4">
         {books.map((book) => {
+          console.log(book.title.rendered);
           return (
             <li key={book.id} className="bg-slate-200 p-4 rounded">
               <h3 className="text-4xl">{book.title.rendered}</h3>
-              {book.excerpt.rendered}
+              <div
+                dangerouslySetInnerHTML={{ __html: book.excerpt.rendered }}
+              />
               <a href={book.link}>Go</a>
             </li>
           );
         })}
       </ul>
-
-      {/* <section>
-        <h1>{books[0].title.rendered}</h1>
-        <h3>{books[0].slug}</h3>
-        <p>{books[0].content.rendered}</p>
-        <h1>{books[1].title.rendered}</h1>
-      </section> */}
     </main>
   );
 }
