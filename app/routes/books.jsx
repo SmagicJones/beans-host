@@ -1,11 +1,10 @@
 import { useLoaderData } from "@remix-run/react";
+import { Link } from "@remix-run/react";
 
 import { Button } from "../components/ui/button";
 
-export default function Wordpress() {
+export default function Books() {
   const books = useLoaderData();
-
-  console.log(books);
 
   return (
     <main>
@@ -19,7 +18,6 @@ export default function Wordpress() {
 
       <ul className="grid md:grid-cols-2 gap-4">
         {books.map((book) => {
-          //   console.log(book);
           return (
             <li key={book.id} className="bg-slate-200 p-4 rounded">
               <h3 className="text-4xl">{book.title.rendered}</h3>
@@ -27,9 +25,14 @@ export default function Wordpress() {
               <div
                 dangerouslySetInnerHTML={{ __html: book.excerpt.rendered }}
               />
-              <Button>
-                <a href={book.link}>Go</a>
-              </Button>
+              <div className="flex justify-evenly">
+                <Button>
+                  <a href={book.link}>Go</a>
+                </Button>
+                <Button>
+                  <a href={`/${book.id}`}>detail</a>
+                </Button>
+              </div>
             </li>
           );
         })}
