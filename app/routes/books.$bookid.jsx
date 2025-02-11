@@ -16,7 +16,6 @@ export default function Book() {
 }
 
 export async function loader({ params }) {
-  // const bookid = "121";
   const bookid = params.bookid;
   const book = await fetch(
     `https://devplayground.3dcoded.com/wp-json/wp/v2/books/${bookid}`

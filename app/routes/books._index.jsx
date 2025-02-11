@@ -30,7 +30,7 @@ export default function Books() {
                   <a href={book.link}>Go</a>
                 </Button>
                 <Button>
-                  <a href={`/${book.id}`}>detail</a>
+                  <a href={`/books/${book.id}`}>detail</a>
                 </Button>
               </div>
             </li>
