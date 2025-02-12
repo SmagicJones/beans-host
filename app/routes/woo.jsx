@@ -3,11 +3,29 @@ import { useLoaderData } from "@remix-run/react";
 export default function Woo() {
   const products = useLoaderData();
   return (
-    <div className="grid md:grid-cols-4 gap-4">
+    <div className="grid md:grid-cols-2 gap-4">
       {products.map((product) => {
+        console.log(product);
         return (
           <div key={product.id}>
-            <h3>{product.name}</h3>
+            <h3 className="text-center text-2xl">{product.name}</h3>
+            <div
+              className="text-center"
+              dangerouslySetInnerHTML={{ __html: product.price_html }}
+            ></div>
+            <p
+              dangerouslySetInnerHTML={{ __html: product.htmlcontent.rendered }}
+            ></p>
+
+            <div className="grid md:grid-cols-2 gap-4">
+              {product.images.map((image) => {
+                return (
+                  <div className="rounded">
+                    {image.src && <img src={image.src} alt={image.alt} />}
+                  </div>
+                );
+              })}
+            </div>
           </div>
         );
       })}
