@@ -5,7 +5,6 @@ import { Button } from "../components/ui/button";
 
 export default function Books() {
   const books = useLoaderData();
-
   return (
     <main>
       <section>
@@ -30,7 +29,7 @@ export default function Books() {
                   <a href={book.link}>Go</a>
                 </Button>
                 <Button>
-                  <a href={`/books/${book.id}`}>detail</a>
+                  <a href={`/books/${book.slug}`}>detail</a>
                 </Button>
               </div>
             </li>
