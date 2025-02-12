@@ -1,23 +1,43 @@
 import { useLoaderData } from "@remix-run/react";
 
+import { aspectRatio } from "../components/ui/aspect-ratio";
+import { AspectRatio } from "@radix-ui/react-aspect-ratio";
+
 export default function Woo() {
   const products = useLoaderData();
   return (
-    <div className="grid md:grid-cols-2 gap-4">
+    <div className="grid grid-cols-2 gap-4">
       {products.map((product) => {
         console.log(product);
         return (
-          <div key={product.id}>
+          <div
+            key={product.id}
+            className="bg-purple-300 p-4 rounded text-white"
+          >
+            <a href={`/products/${product.slug}`}>More detail</a>
             <h3 className="text-center text-2xl">{product.name}</h3>
+            <div className="flex justify-center items-center">
+              {product.images[0] ? (
+                <img
+                  className="w-[400px] h-[400px] rounded"
+                  src={product.images[0].src}
+                  alt={product.name}
+                />
+              ) : (
+                <p>Beans</p>
+              )}
+            </div>
+
             <div
               className="text-center"
               dangerouslySetInnerHTML={{ __html: product.price_html }}
             ></div>
-            <p
+            <p>{product.slug}</p>
+            {/* <p
               dangerouslySetInnerHTML={{ __html: product.htmlcontent.rendered }}
-            ></p>
+            ></p> */}
 
-            <div className="grid md:grid-cols-2 gap-4">
+            {/* <div className="grid md:grid-cols-2 gap-4">
               {product.images.map((image) => {
                 return (
                   <div className="rounded">
@@ -25,7 +45,7 @@ export default function Woo() {
                   </div>
                 );
               })}
-            </div>
+            </div> */}
           </div>
         );
       })}
