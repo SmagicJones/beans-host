@@ -7,6 +7,8 @@ import {
   Link,
 } from "@remix-run/react";
 
+import "dotenv/config";
+
 import type { LinksFunction } from "@remix-run/node";
 import stylesheet from "~/tailwind.css?url";
 
