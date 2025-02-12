@@ -3,6 +3,8 @@ import { useLoaderData } from "@remix-run/react";
 import { aspectRatio } from "../components/ui/aspect-ratio";
 import { AspectRatio } from "@radix-ui/react-aspect-ratio";
 
+import { Button } from "../components/ui/button";
+
 export default function Woo() {
   const products = useLoaderData();
   return (
@@ -14,7 +16,10 @@ export default function Woo() {
             key={product.id}
             className="bg-purple-300 p-4 rounded text-white"
           >
-            <a href={`/products/${product.slug}`}>More detail</a>
+            <Button>
+              <a href={`/products/${product.slug}`}>More detail</a>
+            </Button>
+
             <h3 className="text-center text-2xl">{product.name}</h3>
             <div className="flex justify-center items-center">
               {product.images[0] ? (

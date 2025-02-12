@@ -4,17 +4,28 @@ export default function Product() {
   const productData = useLoaderData();
 
   return (
-    <div className="grid grid-cols-1 gap-4">
+    <div className="grid grid-cols-2 gap-4">
       {productData.map((product) => {
         return (
-          <div className="bg-lime-500">
-            <h3>{product.name}</h3>
+          <div className="bg-lime-500 p-4 rounded">
+            <h3 className="text-2xl text-center">{product.name}</h3>
             <p
               dangerouslySetInnerHTML={{ __html: product.htmlcontent.rendered }}
             ></p>
           </div>
         );
       })}
+      <div className="bg-lime-400 rounded">
+        {productData.map((product) => {
+          return product.images.map((image) => {
+            return (
+              <div>
+                <img src={image.src} />
+              </div>
+            );
+          });
+        })}
+      </div>
     </div>
   );
 }
