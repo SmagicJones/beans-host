@@ -18,7 +18,7 @@ export default function Books() {
       <ul className="grid md:grid-cols-2 gap-4">
         {books.map((book) => {
           return (
-            <li key={book.id} className="bg-slate-200 p-4 rounded">
+            <li key={book.id} className="bg-slate-200 p-4 rounded m-2">
               <h3 className="text-4xl">{book.title.rendered}</h3>
               <img src={``} />
               <div
