@@ -6,7 +6,14 @@ export default function Product() {
   return (
     <div className="grid grid-cols-1 gap-4">
       {productData.map((product) => {
-        return <div className="bg-lime-500">{product.name}</div>;
+        return (
+          <div className="bg-lime-500">
+            <h3>{product.name}</h3>
+            <p
+              dangerouslySetInnerHTML={{ __html: product.htmlcontent.rendered }}
+            ></p>
+          </div>
+        );
       })}
     </div>
   );
