@@ -24,18 +24,7 @@ import {
 
 import { AppSidebar } from "./components/app-sidebar";
 
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-  BreadcrumbPage,
-  BreadcrumbSeparator,
-} from "./components/ui/breadcrumb";
-
 import { Separator } from "./components/ui/separator";
-
-import Header from "./components/header";
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -64,9 +53,9 @@ export default function App() {
           <div className="flex items-center gap-2 px-4">
             <SidebarTrigger className="-ml-1" />
             <Separator orientation="vertical" className="mr-2 h-4" />
-            <Link to="/">
-              <h1 className="lg:text-4xl md:text-2xl font-mono">Boblogs</h1>
-            </Link>
+            <a href="/">
+              <p className=" font-mono">Boblogs</p>
+            </a>
           </div>
         </header>
         <div className="flex flex-1 flex-col gap-4 p-4 pt-0">
