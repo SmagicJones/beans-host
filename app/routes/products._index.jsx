@@ -10,7 +10,6 @@ export default function Woo() {
   return (
     <div className="grid grid-cols-2 gap-4">
       {products.map((product) => {
-        console.log(product);
         return (
           <div
             key={product.id}

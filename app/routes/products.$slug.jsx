@@ -1,4 +1,6 @@
-import { useLoaderData } from "@remix-run/react";
+import { Form, redirect, useActionData, useLoaderData } from "@remix-run/react";
+
+import { Button } from "../components/ui/button";
 
 export default function Product() {
   const productData = useLoaderData();
@@ -9,6 +11,23 @@ export default function Product() {
         return (
           <div className="bg-lime-500 p-4 rounded">
             <h3 className="text-2xl text-center">{product.name}</h3>
+            <Form method="post">
+              <Button>
+                <label className="p-2" htmlFor="productId">
+                  Enter Product ID
+                </label>
+                <input
+                  className="rounded text-black"
+                  type="text"
+                  id="productId"
+                  name="productId"
+                  // value={product.id}
+                  placeholder={product.id}
+                  required
+                />
+                <button>Add to cart</button>
+              </Button>
+            </Form>
             <p
               dangerouslySetInnerHTML={{ __html: product.htmlcontent.rendered }}
             ></p>
@@ -28,6 +47,16 @@ export default function Product() {
       </div>
     </div>
   );
+}
+
+export async function action({ request }) {
+  const formData = await request.formData();
+  const productDetails = Object.fromEntries(formData);
+  const productID = productDetails.productId;
+  await fetch(
+    `https://devplayground.3dcoded.com/?add-to-cart=${productID}&consumer_key=${process.env.CONSUMER_KEY}&consumer_secret=${process.env.CONSUMER_SECRET}`
+  );
+  return redirect("/products");
 }
 
 export async function loader({ params }) {
