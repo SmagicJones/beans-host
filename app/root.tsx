@@ -5,6 +5,7 @@ import {
   Scripts,
   ScrollRestoration,
   Link,
+  useNavigation,
 } from "@remix-run/react";
 
 import "dotenv/config";
@@ -26,6 +27,8 @@ import { AppSidebar } from "./components/app-sidebar";
 
 import { Separator } from "./components/ui/separator";
 
+import { Skeleton } from "./components/ui/skeleton";
+
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
@@ -45,6 +48,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
+  const navigation = useNavigation();
   return (
     <SidebarProvider>
       <AppSidebar />
@@ -60,6 +64,9 @@ export default function App() {
         </header>
         <div className="flex flex-1 flex-col gap-4 p-4 pt-0">
           <div className="min-h-[100vh] flex-1 rounded-xl bg-muted/50 md:min-h-min">
+            {navigation.state !== "idle" && (
+              <Skeleton className="w-[100px] h-[20px] rounded-full" />
+            )}
             <Outlet />
           </div>
         </div>

@@ -1,12 +1,10 @@
 import { useLoaderData } from "@remix-run/react";
 
-import { aspectRatio } from "../components/ui/aspect-ratio";
-
 import { Button } from "../components/ui/button";
-import { AspectRatio } from "../components/ui/aspect-ratio";
 
 export default function Woo() {
   const products = useLoaderData();
+
   return (
     <div className="grid md:grid-cols-2 gap-4">
       {products.map((product) => {

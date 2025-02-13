@@ -1,4 +1,5 @@
 import { Form, redirect, useActionData, useLoaderData } from "@remix-run/react";
+import { useNavigation } from "@remix-run/react";
 
 import { Button } from "../components/ui/button";
 
@@ -59,7 +60,7 @@ export async function action({ request }) {
     {
       method: "POST",
       headers: {
-        'Nonce': "eb38b59986"
+        Nonce: "eb38b59986",
       },
     }
   );
