@@ -54,9 +54,12 @@ export async function action({ request }) {
   const productDetails = Object.fromEntries(formData);
   const productID = productDetails.productId;
   await fetch(
-    `https://devplayground.3dcoded.com/?add-to-cart=${productID}&consumer_key=${process.env.CONSUMER_KEY}&consumer_secret=${process.env.CONSUMER_SECRET}`
+    `https://devplayground.3dcoded.com/wc/store/add-item?id=${productID}&consumer_key=${process.env.CONSUMER_KEY}&consumer_secret=${process.env.CONSUMER_SECRET}`,
+    {
+      method: "POST",
+    }
   );
-  return redirect("/products");
+  return redirect("/cart");
 }
 
 export async function loader({ params }) {
