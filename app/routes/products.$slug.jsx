@@ -53,10 +53,14 @@ export async function action({ request }) {
   const formData = await request.formData();
   const productDetails = Object.fromEntries(formData);
   const productID = productDetails.productId;
+  console.log(productID, "product id in action");
   await fetch(
-    `https://devplayground.3dcoded.com/wc/store/add-item?id=${productID}&consumer_key=${process.env.CONSUMER_KEY}&consumer_secret=${process.env.CONSUMER_SECRET}`,
+    `https://devplayground.3dcoded.com/wc/store/v1/cart/add-item?id=${productID}&quantity=1&consumer_key=${process.env.CONSUMER_KEY}&consumer_secret=${process.env.CONSUMER_SECRET}`,
     {
       method: "POST",
+      headers: {
+        'Nonce': "eb38b59986"
+      },
     }
   );
   return redirect("/cart");
