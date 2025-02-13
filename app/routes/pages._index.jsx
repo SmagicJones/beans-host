@@ -4,14 +4,14 @@ import { Button } from "../components/ui/button";
 
 export default function Pages() {
   const pages = useLoaderData();
-  console.log(pages);
+
   return (
     <main>
       <h1>Pages</h1>
       <div className="grid md:grid-cols-4 gap-4">
         {pages.map((page) => {
           return (
-            <div>
+            <div key={page.id}>
               <h3>{page.slug}</h3>
               <Button>
                 <a href={`/pages/${page.slug}`}>More detail</a>

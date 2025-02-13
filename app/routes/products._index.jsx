@@ -8,7 +8,7 @@ import { Button } from "../components/ui/button";
 export default function Woo() {
   const products = useLoaderData();
   return (
-    <div className="grid grid-cols-2 gap-4">
+    <div className="grid md:grid-cols-2 gap-4">
       {products.map((product) => {
         return (
           <div
