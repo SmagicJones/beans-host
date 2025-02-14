@@ -44,16 +44,17 @@ export async function action({ request }) {
   const formData = await request.formData();
   const productDetails = Object.fromEntries(formData);
   const productId = productDetails.productId;
-  const response = await fetch(
+  await fetch(
     `https://devplayground.3dcoded.com/wp-json/wc/store/v1/cart/add-item?id=${productId}consumer_key=${process.env.CONSUMER_KEY}&consumer_secret=${process.env.CONSUMER_SECRET}`,
     {
       method: "POST",
       headers: {
-        nonce: "89b3ceb1d0",
+        nonce: "2ca28a4927",
       },
     }
-  );
-  return response;
+  ).then((response) => {
+    console.log(response);
+  });
 }
 
 export async function loader({ params }) {
