@@ -1,4 +1,4 @@
-import { useLoaderData } from "@remix-run/react";
+import { useLoaderData, Link } from "@remix-run/react";
 
 import { Button } from "../components/ui/button";
 
@@ -35,7 +35,9 @@ export default function Woo() {
             ></div>
             <div className="flex justify-center items-center p-4">
               <Button>
-                <a href={`/products/${product.slug}`}>Learn More</a>
+                <Link prefetch="render" to={`/products/${product.slug}`}>
+                  Learn More
+                </Link>
               </Button>
             </div>
           </div>

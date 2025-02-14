@@ -29,7 +29,9 @@ export default function Books() {
                   <a href={book.link}>Go</a>
                 </Button>
                 <Button>
-                  <a href={`/books/${book.slug}`}>detail</a>
+                  <Link prefetch="render" to={`/books/${book.slug}`}>
+                    detail
+                  </Link>
                 </Button>
               </div>
             </li>

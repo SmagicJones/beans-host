@@ -1,4 +1,4 @@
-import { useLoaderData } from "@remix-run/react";
+import { useLoaderData, Link } from "@remix-run/react";
 
 import { Button } from "../components/ui/button";
 
@@ -14,7 +14,9 @@ export default function Pages() {
             <div key={page.id}>
               <h3>{page.slug}</h3>
               <Button>
-                <a href={`/pages/${page.slug}`}>More detail</a>
+                <Link prefetch="render" to={`/pages/${page.slug}`}>
+                  More detail
+                </Link>
               </Button>
             </div>
           );
