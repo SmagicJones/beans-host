@@ -2,7 +2,7 @@ import { useLoaderData } from "@remix-run/react";
 
 export default function Cart() {
   const cart = useLoaderData();
-  console.log(cart, "this is the cart");
+  // console.log(cart, "this is the cart");
 
   return (
     <main>
