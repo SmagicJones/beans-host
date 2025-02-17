@@ -40,7 +40,7 @@ export default function Product() {
                 <div>
                   <Form
                     method="post"
-                    className="bg-slate-500 p-4 m-2 grid md:grid-cols-2 gap-4 rounded"
+                    className="bg-slate-500 p-4 m-2 grid md:grid-cols-2 gap-4 rounded text-white"
                   >
                     <input
                       type="hidden"
@@ -74,6 +74,7 @@ export default function Product() {
                       required
                     />
 
+                    <div></div>
                     <Button>Order Now</Button>
                   </Form>
                 </div>
