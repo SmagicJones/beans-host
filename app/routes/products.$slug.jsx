@@ -17,7 +17,6 @@ export default function Product() {
       )}
       {productData &&
         productData.map((product) => {
-          console.log(product.images, "product images");
           return (
             <>
               <div key={product.id} className="bg-slate-500 p-4 text-white">
@@ -40,7 +39,7 @@ export default function Product() {
                 <div>
                   <Form
                     method="post"
-                    className="bg-slate-500 p-4 m-2 grid md:grid-cols-2 gap-4 rounded text-white"
+                    className="bg-slate-500 p-4 m-2 grid md:grid-cols-2 gap-4 rounded"
                   >
                     <input
                       type="hidden"
@@ -49,7 +48,9 @@ export default function Product() {
                       value={product.id}
                       className="rounded"
                     />
-                    <label htmlFor="name">Name</label>
+                    <label htmlFor="name" className="text-white">
+                      Name
+                    </label>
                     <input
                       type="text"
                       id="name"
@@ -57,7 +58,9 @@ export default function Product() {
                       className="rounded"
                       required
                     />
-                    <label htmlFor="surname">Surname</label>
+                    <label htmlFor="surname" className="text-white">
+                      Surname
+                    </label>
                     <input
                       type="text"
                       id="surname"
@@ -65,7 +68,9 @@ export default function Product() {
                       className="rounded"
                       required
                     />
-                    <label htmlFor="quantity">Quantity</label>
+                    <label htmlFor="quantity" className="text-white">
+                      Quantity
+                    </label>
                     <input
                       type="number"
                       id="quantity"
