@@ -32,24 +32,7 @@ const data = {
         },
       ],
     },
-    {
-      title: "New Things",
-      items: [
-        {
-          title: "books",
-          url: "/books",
-        },
-        {
-          title: "products",
-          url: "/products",
-          isActive: true,
-        },
-        {
-          title: "pages",
-          url: "/pages",
-        },
-      ],
-    },
+
     // {
     //   title: "API Reference",
     //   url: "#",
