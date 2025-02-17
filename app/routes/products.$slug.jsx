@@ -47,6 +47,7 @@ export default function Product() {
                       id="name"
                       name="name"
                       className="rounded"
+                      required
                     />
                     <label htmlFor="surname">Surname</label>
                     <input
@@ -54,6 +55,15 @@ export default function Product() {
                       id="surname"
                       name="surname"
                       className="rounded"
+                      required
+                    />
+                    <label htmlFor="quantity">Quantity</label>
+                    <input
+                      type="number"
+                      id="quantity"
+                      name="quantity"
+                      className="rounded"
+                      required
                     />
 
                     <Button>Order Now</Button>
@@ -73,6 +83,7 @@ export async function action({ request }) {
   const productId = productDetails.productId;
   const name = productDetails.name;
   const surname = productDetails.surname;
+  const quantity = productDetails.quantity;
 
   const order = {
     payment_method: "bacs",
@@ -103,7 +114,7 @@ export async function action({ request }) {
     line_items: [
       {
         product_id: productId,
-        quantity: 85,
+        quantity: quantity,
       },
     ],
     shipping_lines: [
