@@ -17,18 +17,26 @@ export default function Product() {
       )}
       {productData &&
         productData.map((product) => {
+          console.log(product.images, "product images");
           return (
             <>
               <div key={product.id} className="bg-slate-500 p-4 text-white">
-                <h3>{product.name}</h3>
+                <h3 className="text-2xl">{product.name}</h3>
               </div>
+
               <div className="grid md:grid-cols-2 gap-4">
-                <div
-                  className="p-4 space-y-2"
-                  dangerouslySetInnerHTML={{
-                    __html: product.htmlcontent.rendered,
-                  }}
-                ></div>
+                <div>
+                  <img className="rounded m-2" src={product.images[0].src} />
+                  <div className="grid grid-cols-4 gap-4 flex-col">
+                    {product.images.map((image) => {
+                      return (
+                        <div className="p-2">
+                          <img src={image.src} alt="" />
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
                 <div>
                   <Form
                     method="post"
@@ -70,6 +78,15 @@ export default function Product() {
                   </Form>
                 </div>
               </div>
+              <div className="grid grid-cols-1">
+                <div
+                  className="p-4 space-y-2"
+                  dangerouslySetInnerHTML={{
+                    __html: product.htmlcontent.rendered,
+                  }}
+                ></div>
+              </div>
+              <div></div>
             </>
           );
         })}
